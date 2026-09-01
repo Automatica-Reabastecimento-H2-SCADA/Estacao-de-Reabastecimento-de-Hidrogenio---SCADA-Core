@@ -14,4 +14,4 @@ Como aplicação para o sistema, foi definida uma estação de reabastecimento d
 
 O **SCADA** será desenvolvido para simular e supervisionar o ciclo operacional da estação, desde a preparação para o abastecimento até sua finalização. Durante a simulação, o sistema deverá representar o estado dos equipamentos e das principais variáveis do processo, permitindo acompanhar a sequência de operação e a atuação dos dispositivos de controle. O sistema também deverá tratar situações anormais por meio de alarmes, intertravamentos e procedimentos de segurança, reproduzindo no ambiente de supervisão as diferentes condições que podem ocorrer durante a operação da planta.
 
-<sub>Last updated by Github Actions on 10 Aug, 2026.</sub>
+<sub>Last updated by Github Actions on 01 Sep, 2026.</sub>
