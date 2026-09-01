@@ -1,9 +1,85 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Landing page de documentação e supervisório SCADA Core para Estação de Reabastecimento de Hidrogênio (H₂). Engenharia de Controle e Automação — UNIFEI.">
+  <meta name="author" content="Equipe SCADA-Core UNIFEI">
+  <meta property="og:title" content="Estação de Reabastecimento de H₂ — SCADA Core">
+  <meta property="og:description" content="Documentação técnica, P&ID interativo e equipe do projeto SCADA de Hidrogênio. UNIFEI.">
 
-<html lang="pt-BR"> <head> <meta charset="UTF-8"> <title>Estação de Reabastecimento de Hidrogênio</title> <link rel="stylesheet" href="style.css"> </head> <body>
+  <title>Estação de Reabastecimento de H₂ — SCADA Core</title>
 
-<h1>Estação de Reabastecimento de Hidrogênio</h1>
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<p>GitHub Pages funcionando!</p>
+  <!-- Estilos da Aplicação -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
 
-</body> </html>
+  <!-- ====================================================================
+       1. TOPBAR (Barra de Navegação Horizontal no Topo)
+       ==================================================================== -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <button class="mobile-toggle-btn" id="mobile-drawer-toggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false">
+        ☰
+      </button>
+      <span class="brand-badge">H₂-SCADA</span>
+      <span class="brand-title">
+        Estação de Reabastecimento de H₂
+        <span class="unifei-tag">· UNIFEI</span>
+      </span>
+    </div>
+
+    <div class="topbar-right">
+      <a href="https://github.com/Automatica-Reabastecimento-H2-SCADA/Estacao-de-Reabastecimento-de-Hidrogenio---SCADA-Core" target="_blank" rel="noopener noreferrer" class="nav-github-link" title="Repositório no GitHub">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+        <span>GitHub</span>
+      </a>
+
+      <button class="theme-toggle-btn" type="button" aria-label="Alternar tema claro/escuro">
+        ☀️
+      </button>
+    </div>
+  </header>
+
+  <!-- Overlay para fechar drawer em mobile -->
+  <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
+
+  <!-- ====================================================================
+       2. CONTAINER: SIDEBAR (Índice Estreito) + CONTEÚDO PRINCIPAL
+       ==================================================================== -->
+  <div class="app-container">
+
+    <!-- SIDEBAR (Índice Estreito ~240px) -->
+    <aside class="sidebar" id="app-sidebar" aria-label="Índice de Navegação">
+      <nav class="sidebar-nav" id="sidebar-nav">
+        <!-- Itens construídos dinamicamente por buildSidebar() em js/main.js -->
+      </nav>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL (Renderização Dinâmica SPA) -->
+    <main class="main-content" id="app-main" role="main">
+      <div class="page-loading-spinner">
+        <div class="spinner"></div>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Tooltip Flutuante para os Sensores do Diagrama -->
+  <div id="diagram-tooltip" class="custom-diagram-tooltip" role="tooltip" aria-hidden="true"></div>
+
+  <!-- Scripts Modulares -->
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/diagram.js"></script>
+  <script src="assets/js/contributors.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
