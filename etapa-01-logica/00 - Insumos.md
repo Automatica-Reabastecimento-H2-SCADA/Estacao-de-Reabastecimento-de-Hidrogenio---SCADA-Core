@@ -1,37 +1,4 @@
-# Mapeamento de Insumos: Matérias-Primas e Variáveis Lógicas
 
-Este documento descreve os insumos físicos (matérias-primas e utilidades) que alimentam a Estação de Reabastecimento de Hidrogênio, bem como o mapeamento completo dos insumos lógicos (entradas e saídas discretas) utilizados nas equações de intertravamento do sistema SCADA.
-
-## 1. Matérias-Primas Primárias e Utilidades Físicas
-
-Antes da abstração lógica, o sistema depende de insumos físicos fundamentais para a sua operação. Eles representam a massa e a energia transformadas ou controladas pela planta:
-
-* **Gás Hidrogênio ($H_2$):** A matéria-prima principal do processo. É recebido em alta pressão, distribuido para o armazenamento em multiplas pressões e, por fim, dispensado no veículo.
-* **Energia Elétrica (Potência Motriz e Controle):** Insumo utilitário crítico que alimenta os motores dos compressores, as bombas do chiller e todo o painel de automação (CLP, SCADA, instrumentação).
-* **Fluido Refrigerante / Glicol:** Insumo utilitário circulante no sistema do Chiller (Setor 200), vital para o pré-resfriamento do hidrogênio ($T \leq -40^\circ C$) antes da dispensação.
-* **Ar Comprimido / Gás Nitrogênio ($N_2$):** Insumo utilitário frequentemente utilizado para atuação de válvulas pneumáticas ou rotinas de purga de segurança nas tubulações.
-
----
-
-## 2. Insumos Lógicos de Entrada (Sensoriamento e Comandos)
-
-Estas são as proposições lógicas lidas do campo (valores discretos Verdadeiro/Falso) que atuam como as premissas nas equações lógicas de permissivo e trip.
-
-### Setor 100: Banco de Armazenamento (Baixa, Média e Alta Pressão)
-
-**Tanque de baixa pressão**
-* $p_{1,1}$: Pressão do tanque excede o limite de segurança, $P > 400\text{ bar}$ (PT-101)
-* $p_{1,4}$: Pressão do tanque atinge o valor desejado de operação, $P > 350\text{ bar}$ (PT-104)
-* $t_{1,1}$: Temperatura do tanque excede o limite de segurança, $T > 85^\circ\text{C}$ (TT-101)
-* $g_{1,1}$: Vazamento de H₂ detectado no tanque de baixa pressão (AT-101)
-* $r_{1,1}$: Válvula de alívio de pressão ATUADA — confirmação de disparo mecânico (PSV-101)
-
-**Tanque de média pressão**
-* $p_{1,2}$: Pressão do tanque excede o limite de segurança, $P > 700\text{ bar}$ (PT-102)
-* $p_{1,5}$: Pressão do tanque atinge o valor desejado de operação, $P > 650\text{ bar}$ (PT-105)
-* $t_{1,2}$: Temperatura do tanque excede o limite de segurança, $T > 85^\circ\text{C}$ (TT-102)
-* $g_{1,2}$: Vazamento de H₂ detectado no tanque de média pressão (AT-102)
-* $r_{1,2}$: Válvula de alívio de pressão ATUADA — confirmação de disparo mecânico (PSV-102)
 
 **Tanque de alta pressão**
 * $p_{1,3}$: Pressão do tanque excede o limite de segurança, $P > 1000\text{ bar}$ (PT-103)
